@@ -1,4 +1,4 @@
-package com.och.hackthon.services;
+package com.och.hackthon.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,7 +9,7 @@ public class ConnectionFactory {
 	private static String JDBC_DRIVER = "com.mysql.jdbc.Driver";
 
 	//private static String URL = "jdbc:mysql://127.0.0.1:3306/hackthon";
-	private static String URL = "jdbc:mysql://192.168.56.1:3306/hackthon";
+	private static String URL = "jdbc:mysql://172.31.12.148:3306/hackthon";
 
 	private static String USER = "hackthon";
 
