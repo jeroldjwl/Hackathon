@@ -35,6 +35,7 @@ public class UserService {
 			ps = conn.prepareStatement(registerSQL);
 			ps.setString(1, u.getUserName());
 			ps.setString(2, u.getPassword());
+			ps.setInt(3, 1);
 			int flag = ps.executeUpdate();
 			if (flag == 0)
 				return false;
@@ -99,7 +100,7 @@ public class UserService {
 
 	private String getUserSQL = "select * from User where UserName=?";
 
-	private String registerSQL = "insert into User (UserName, Password) values(?,?)";
+	private String registerSQL = "insert into User (UserName, Password, UserRole) values(?,?,?)";
 
 	private String insertSQL = "insert into User (name, age, height, address) values(?,?,?,?)";
 

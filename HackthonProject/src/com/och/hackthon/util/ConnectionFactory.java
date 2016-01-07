@@ -8,8 +8,8 @@ public class ConnectionFactory {
 
 	private static String JDBC_DRIVER = "com.mysql.jdbc.Driver";
 
-	//private static String URL = "jdbc:mysql://127.0.0.1:3306/hackthon";
-	private static String URL = "jdbc:mysql://172.31.12.148:3306/hackthon";
+	private static String URL = "jdbc:mysql://127.0.0.1:3306/hackthon";
+	//private static String URL = "jdbc:mysql://172.31.12.148:3306/hackthon";
 
 	private static String USER = "hackthon";
 
