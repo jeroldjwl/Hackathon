@@ -6,7 +6,7 @@
 	</head>
 
 	<body style="text-align: center;">
-		<form action="${pageContext.request.contextPath}/servlet/UserRegisterUIServlet" method="post">
+		<form action="${pageContext.request.contextPath}/servlet/UserRegisterServlet" method="post">
 			<table width="60%" border="1">
 				<tr>
 					<td>username</td>

@@ -18,7 +18,7 @@
 	    </form>
     </div>
     <div class="registerbutton">
-    <form action="/HackthonProject/servlet/UserRegisterServlet" method="post" class="toplogin" >    
+    <form action="/HackthonProject/servlet/UserRegisterUIServlet" method="post" class="toplogin" >    
 	  <label for="pwd" class="entypo-lock"></label>
 	  <input id ="id" type="password" class="pass" name="password" placeholder="password">	  
       <button class="submit">Register</span></button>
