@@ -15,19 +15,19 @@ import com.och.hackthon.util.DBConnUtil;
 
 
 public class AdminOperationServlet {
-	public void doGet(HttpServletRequest req, HttpServletResponse res)
+	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 	throws ServletException, IOException{
-		    	this.doPost(req,res);
+		    	this.doPost(req,resp);
 	}   	    
-	public void doPost(HttpServletRequest req, HttpServletResponse res)
+	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 	throws ServletException,IOException{
-		    res.setCharacterEncoding("GBK");											
+		    resp.setCharacterEncoding("GBK");											
 		    req.setCharacterEncoding("GBK");				
 		    HttpSession session = req.getSession();			
 		    String action = req.getParameter("action");								
 		    if(action.equals("logout")){
 		    	req.getSession(true).invalidate();	
-				req.getRequestDispatcher("login.jsp").forward(req,res);
+				req.getRequestDispatcher("login.jsp").forward(req,resp);
 		    }
 		    else if(action.equals("addUser")){
 		    	String username = req.getParameter("username");
@@ -43,6 +43,8 @@ public class AdminOperationServlet {
 				UserService service = new UserService();
 				
 				boolean flag = service.insertUser(user, conn);
+				
+				req.getRequestDispatcher("adminNavigation.jsp").forward(req,resp);
 				
 		    }
 		    else if(action.equals("deleteUser")){
@@ -61,6 +63,8 @@ public class AdminOperationServlet {
 				
 				boolean flag = service.delete(username, conn);
 				
+				req.getRequestDispatcher("adminNavigation.jsp").forward(req,resp);
+				
 		    }
 		    else if(action.equals("addBook")){
 		    	String bookNO = req.getParameter("bookNO");
@@ -77,6 +81,8 @@ public class AdminOperationServlet {
 				BookService service = new BookService();
 				
 				boolean flag = service.insertBook(book, toNum, conn);
+				
+				req.getRequestDispatcher("adminNavigation.jsp").forward(req,resp);
 		    }
 		    else if(action.equals("deleteBook")){
 		    	String bookNO = req.getParameter("bookNO");
@@ -93,6 +99,8 @@ public class AdminOperationServlet {
 				BookService service = new BookService();
 				
 				boolean flag = service.deleteBook(bookNO, bookName, stock, conn);
+				
+				req.getRequestDispatcher("adminNavigation.jsp").forward(req,resp);
 		    }
 		    else if(action.equals("SingleBookInfo")){
 		    	String bookNO = req.getParameter("bookNO");

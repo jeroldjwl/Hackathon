@@ -12,7 +12,7 @@ import com.och.hackthon.services.UserService;
 import com.och.hackthon.util.DBConnUtil;
 
 
-public class UserOperationServlet {
+public class UserOperationServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse res)
 	throws ServletException, IOException{
 		    	this.doPost(req,res);
@@ -107,7 +107,9 @@ public class UserOperationServlet {
 				}
 		    }
 		    else if(action.equals("pay")){
-		    	
+		    	String bookNO = req.getParameter("bookNO");
+				String bookName = req.getParameter("bookName");
+				int toNum = Integer.parseInt(req.getParameter("toNum"));
 		    }
 	}
 }
