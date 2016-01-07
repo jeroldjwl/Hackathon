@@ -37,42 +37,43 @@ public class UserRegisterServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 	
+		boolean isOk = true;
+		
+		Connection conn = DBConnUtil.getConnection();
+		
+		String username = req.getParameter("userName");
+		
+		System.out.println(username);
+		
+		String password = req.getParameter("password");
+		
+		System.out.println(password);
+		
+		if (username == null || username.trim().equals("")) {
+			isOk = false;
+			errors.put("username", "用户名不能为空！！");
+		} else {
+			if (!username.matches("^1[0-9]{10}$")) {
+				isOk = false;
+				errors.put("username", "用户名必须是11位的手机号码！！");
+				return;
+			}
+		}
+
+		if (password == null || password.trim().equals("")) {
+			isOk = false;
+			errors.put("userPwd", "密码不能为空！！");
+		} else {
+			if (!password.matches("\\d{3,8}")) {
+				isOk = false;
+				errors.put("userPwd", "密码必须是3-8位的数字！！");
+				return;
+			}
+		}
 		
 		try {
 			
-			boolean isOk = true;
 			
-			Connection conn = DBConnUtil.getConnection();
-			
-			String username = req.getParameter("userName");
-			
-			System.out.println(username);
-			
-			String password = req.getParameter("password");
-			
-			System.out.println(password);
-			
-			if (username == null || username.trim().equals("")) {
-				isOk = false;
-				errors.put("username", "用户名不能为空！！");
-			} else {
-				if (!username.matches("^1[0-9]{10}$")) {
-					isOk = false;
-					errors.put("username", "用户名必须是11位的手机号码！！");
-					return;
-				}
-			}
-
-			if (password == null || password.trim().equals("")) {
-				isOk = false;
-				errors.put("userPwd", "密码不能为空！！");
-			} else {
-				if (!password.matches("\\d{3,8}")) {
-					isOk = false;
-					errors.put("userPwd", "密码必须是3-8位的数字！！");
-					return;
-				}
-			}
 			
 
 			User user = new User();
