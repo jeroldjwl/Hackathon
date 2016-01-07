@@ -2,6 +2,7 @@ package com.och.hackthon.servlets;
 
 import java.io.*;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.util.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -65,6 +66,7 @@ public class AdminOperationServlet {
 		    else if(action.equals("addBook")){
 		    	String bookNO = req.getParameter("bookNO");
 				String bookName = req.getParameter("bookName");
+				int toNum = Integer.parseInt(req.getParameter("toNum"));
 				
 				Book book = new Book();
 				
@@ -76,11 +78,12 @@ public class AdminOperationServlet {
 				
 				BookService service = new BookService();
 				
-				boolean flag = service.insertBook(book, conn);
+				boolean flag = service.insertBook(book, toNum, conn);
 		    }
 		    else if(action.equals("deleteBook")){
 		    	String bookNO = req.getParameter("bookNO");
 				String bookName = req.getParameter("bookName");
+				int stock = Integer.parseInt(req.getParameter("stock"));
 				
 				Book book = new Book();
 				
@@ -92,7 +95,7 @@ public class AdminOperationServlet {
 				
 				BookService service = new BookService();
 				
-				boolean flag = service.insertBook(book, conn);
+				boolean flag = service.deleteBook(bookNO, bookName, stock, conn);
 		    }
 		    else if(action.equals("SingleBookInfo")){
 		    	String bookNO = req.getParameter("bookNO");
@@ -104,6 +107,7 @@ public class AdminOperationServlet {
 		    else if(action.equals("AllBookInfo")){
 		    	Connection conn = DBConnUtil.getConnection();
 				BookService service = new BookService();
+				ResultSet rs = service.getAllBooks(conn);
 				
 		    }
 		    else if(action.equals("SingleUserInfo")){
@@ -115,8 +119,7 @@ public class AdminOperationServlet {
 		    else if(action.equals("AllUserInfo")){
 		    	Connection conn = DBConnUtil.getConnection();
 		    	UserService service = new UserService();
-		    	
-		    	
+		    	ResultSet rs = service.getAllUsers(conn);
 		    }
 	}
 }
