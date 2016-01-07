@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.och.hackthon.models.Person;
 import com.och.hackthon.models.User;
 import com.och.hackthon.util.DBConnUtil;
 
@@ -55,7 +54,12 @@ public class UserService {
 			ps.setString(1, u.getUserName());
 			ps.setString(2, u.getNickName());
 			ps.setString(3, u.getRealName());
-			ps.setString(4, u.getAddress());
+			ps.setInt(4, u.getAge());
+			ps.setInt(5, u.getGender());
+			ps.setString(6, u.getAddress());
+			ps.setString(7, u.getPassword());
+			ps.setInt(8, u.getUserRole());
+			ps.setString(9, u.getEmail());
 			int flag = ps.executeUpdate();
 			if (flag == 0)
 				return false;
@@ -67,11 +71,20 @@ public class UserService {
 		return true;
 	}
 
-	public boolean updateOperation(Person p, Connection conn) {
+	public boolean updateUser(User u, Connection conn) {
 		PreparedStatement ps = null;
 		try {
 			ps = conn.prepareStatement(updateSQL);
-			ps.setString(1, p.getAddress());
+			ps.setString(1, u.getUserName());
+			ps.setString(2, u.getNickName());
+			ps.setString(3, u.getRealName());
+			ps.setInt(4, u.getAge());
+			ps.setInt(5, u.getGender());
+			ps.setString(6, u.getAddress());
+			ps.setString(7, u.getPassword());
+			ps.setInt(8, u.getUserRole());
+			ps.setString(9, u.getEmail());
+
 			int flag = ps.executeUpdate();
 			if (flag == 0)
 				return false;
@@ -83,11 +96,11 @@ public class UserService {
 		return true;
 	}
 
-	public boolean delete(Person p, Connection conn) {
+	public boolean delete(String userName, Connection conn) {
 		PreparedStatement ps = null;
 		try {
 			ps = conn.prepareStatement(deleteSQL);
-			ps.setString(1, p.getName());
+			ps.setString(1, userName);
 			int flag = ps.executeUpdate();
 			if (flag == 0)
 				return false;
@@ -105,7 +118,7 @@ public class UserService {
 
 	private String insertSQL = "insert into User (UserName, NickName, RealName, Age, Gender, Address, Password, UserRole, Email) values(?,?,?,?,?,?,?,?,?)";
 
-	private String updateSQL = "update User set name=?";
+	private String updateSQL = "update User set UserName = ?, NickName = ?, RealName = ?, Age = ?, Gender = ?, Address = ?, Password = ?, UserRole = ?, Email = ?";;
 
-	private String deleteSQL = "delete from person where id=?";
+	private String deleteSQL = "delete from User where UserName= ?";
 }

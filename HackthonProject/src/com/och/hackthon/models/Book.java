@@ -1,6 +1,7 @@
 package com.och.hackthon.models;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Book {
 	private String bookNO;
@@ -9,10 +10,31 @@ public class Book {
 	private String author;
 	private String publisher;
 	private int category;
-	
-	public Book(ResultSet rs)
-	{
-		
+
+	public Book() {
+
+	}
+
+	public Book(String bookNo, String bookName, String description, String author, String publisher, int category) {
+		this.bookNO = bookNo;
+		this.bookName = bookName;
+		this.description = description;
+		this.author = author;
+		this.publisher = publisher;
+		this.category = category;
+	}
+
+	public Book(ResultSet rs) {
+		try {
+			this.bookNO = rs.getString("BookNo");
+			this.bookName = rs.getString("BookName");
+			this.description = rs.getString("Description");
+			this.author = rs.getString("Author");
+			this.publisher = rs.getString("Publisher");
+			this.category = rs.getInt("Category");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public String getBookNO() {
@@ -63,5 +85,4 @@ public class Book {
 		this.category = category;
 	}
 
-	
 }
