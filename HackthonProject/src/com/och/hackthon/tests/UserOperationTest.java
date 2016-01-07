@@ -16,6 +16,9 @@ public class UserOperationTest {
 		Connection conn = DBConnUtil.getConnection();
 		User u = us.getUser("15921169285", conn);
 		System.out.println(u.getUserName());
+		System.out.println(u.getPassword());
+		String password="jwl1990";
+		System.out.println(password.equals(u.getPassword()));
 	}
 
 	@Test

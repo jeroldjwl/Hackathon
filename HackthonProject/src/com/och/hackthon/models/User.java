@@ -18,6 +18,19 @@ public class User {
 
 	}
 
+	public User(String userName, String nickName, String realName, String password, int age, int gender, String address,
+			int userRole, String email) {
+		this.userName = userName;
+		this.nickName = nickName;
+		this.realName = realName;
+		this.password = password;
+		this.age = age;
+		this.gender = gender;
+		this.address = address;
+		this.userRole = userRole;
+		this.email = email;
+	}
+
 	public User(ResultSet rs) {
 		try {
 			this.userName = rs.getString("UserName");
