@@ -25,7 +25,7 @@ public class UserOperationServlet extends HttpServlet {
 		    String action = req.getParameter("action");								
 		    if(action.equals("logout")){
 		    	req.getSession(true).invalidate();	
-				req.getRequestDispatcher("login.jsp").forward(req,resp);
+				req.getRequestDispatcher("/index.jsp").forward(req,resp);
 		    }
 		    else if(action.equals("editUserName")){
 		    	Connection conn = DBConnUtil.getConnection();
@@ -34,7 +34,7 @@ public class UserOperationServlet extends HttpServlet {
 		    	user.setUserName(newUserName);
 		    	UserService service = new UserService();
 		    	boolean flag = service.updateUser(user, conn);
-		    	req.getRequestDispatcher("userHome.jsp").forward(req,resp);
+		    	req.getRequestDispatcher("/userHome.jsp").forward(req,resp);
 		    }
 		    else if(action.equals("editNickName")){
 		    	Connection conn = DBConnUtil.getConnection();
@@ -43,7 +43,7 @@ public class UserOperationServlet extends HttpServlet {
 		    	user.setNickName(newNickName);
 		    	UserService service = new UserService();
 		    	boolean flag = service.updateUser(user, conn);
-		    	req.getRequestDispatcher("userHome.jsp").forward(req,resp);
+		    	req.getRequestDispatcher("/userHome.jsp").forward(req,resp);
 		    }
 		    else if(action.equals("editRealName")){
 		    	Connection conn = DBConnUtil.getConnection();
@@ -52,7 +52,7 @@ public class UserOperationServlet extends HttpServlet {
 		    	user.setRealName(newRealName);
 		    	UserService service = new UserService();
 		    	boolean flag = service.updateUser(user, conn);
-		    	req.getRequestDispatcher("userHome.jsp").forward(req,resp);
+		    	req.getRequestDispatcher("/userHome.jsp").forward(req,resp);
 		    }
 		    else if(action.equals("editPassword")){
 		    	Connection conn = DBConnUtil.getConnection();
@@ -61,7 +61,7 @@ public class UserOperationServlet extends HttpServlet {
 		    	user.setPassword(newPassword);
 		    	UserService service = new UserService();
 		    	boolean flag = service.updateUser(user, conn);
-		    	req.getRequestDispatcher("userHome.jsp").forward(req,resp);
+		    	req.getRequestDispatcher("/userHome.jsp").forward(req,resp);
 		    }
 		    else if(action.equals("editAge")){
 		    	Connection conn = DBConnUtil.getConnection();
@@ -70,7 +70,7 @@ public class UserOperationServlet extends HttpServlet {
 		    	user.setAge(newAge);
 		    	UserService service = new UserService();
 		    	boolean flag = service.updateUser(user, conn);
-		    	req.getRequestDispatcher("userHome.jsp").forward(req,resp);
+		    	req.getRequestDispatcher("/userHome.jsp").forward(req,resp);
 		    }
 		    else if(action.equals("editGender")){
 		    	Connection conn = DBConnUtil.getConnection();
@@ -79,7 +79,7 @@ public class UserOperationServlet extends HttpServlet {
 		    	user.setGender(newGender);
 		    	UserService service = new UserService();
 		    	boolean flag = service.updateUser(user, conn);
-		    	req.getRequestDispatcher("userHome.jsp").forward(req,resp);
+		    	req.getRequestDispatcher("/userHome.jsp").forward(req,resp);
 		    }
 		    else if(action.equals("editAddress")){
 		    	Connection conn = DBConnUtil.getConnection();
@@ -88,7 +88,7 @@ public class UserOperationServlet extends HttpServlet {
 		    	user.setAddress(newAddress);
 		    	UserService service = new UserService();
 		    	boolean flag = service.updateUser(user, conn);
-		    	req.getRequestDispatcher("userHome.jsp").forward(req,resp);
+		    	req.getRequestDispatcher("/userHome.jsp").forward(req,resp);
 		    }
 		    else if(action.equals("borrowBooks")){
 		    	synchronized (this) {

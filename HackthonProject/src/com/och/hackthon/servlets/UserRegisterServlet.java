@@ -51,29 +51,29 @@ public class UserRegisterServlet extends HttpServlet {
 		
 		if (username == null || username.trim().equals("")) {
 			isOk = false;
-			errors.put("username", "用户名不能为空！！");
+			System.out.println("username must not be null.");
+			req.getRequestDispatcher("/register.jsp").forward(req, resp);
 		} else {
 			if (!username.matches("^1[0-9]{10}$")) {
 				isOk = false;
-				errors.put("username", "用户名必须是11位的手机号码！！");
-				return;
+				System.out.println("username must be 11 number");
+				req.getRequestDispatcher("/register.jsp").forward(req, resp);
 			}
 		}
 
 		if (password == null || password.trim().equals("")) {
 			isOk = false;
-			errors.put("userPwd", "密码不能为空！！");
+			System.out.println("password can not be empty");
+			req.getRequestDispatcher("/register.jsp").forward(req, resp);
 		} else {
 			if (!password.matches("\\d{3,8}")) {
 				isOk = false;
-				errors.put("userPwd", "密码必须是3-8位的数字！！");
-				return;
+				System.out.println("password must be 3-8 number.");
+				req.getRequestDispatcher("/register.jsp").forward(req, resp);
 			}
 		}
 		
 		try {
-			
-			
 			
 
 			User user = new User();
@@ -86,26 +86,18 @@ public class UserRegisterServlet extends HttpServlet {
 			
 			
 			if(service.getUser(username, conn)!=null){
-				System.out.println("对不起, 用户已存在.");
-				req.getRequestDispatcher("/WEB-INF/pages/register.jsp").forward(req, resp);
+				System.out.println("sorry, user exists.");
+				req.getRequestDispatcher("/register.jsp").forward(req, resp);
 				return;
 			}
 			
 			service.registerUser(user, conn);
 			
-			String message = String.format(
-					"注册成功！！3秒后为您自动跳到登录页面！！<meta http-equiv='refresh' content='3;url=%s'/>", 
-					req.getContextPath()+"/servlet/LoginUIServlet");
-			req.setAttribute("message",message);
-			req.getRequestDispatcher("/message.jsp").forward(req,resp);
+			req.getRequestDispatcher("/WEB-INF/pages/userHome.jsp").forward(req,resp);
 
 		} catch (Exception e) {
 			e.printStackTrace(); 
-			String message = String.format(
-					"注册失败！！3秒后为您自动跳到登录页面！！<meta http-equiv='refresh' content='3;url=%s'/>", 
-					req.getContextPath()+"/servlet/UserRegisterUIServlet");
-			req.setAttribute("message", message);
-			req.getRequestDispatcher("/message.jsp").forward(req,resp);
+			req.getRequestDispatcher("/register.jsp").forward(req,resp);
 		}
 	}
 
