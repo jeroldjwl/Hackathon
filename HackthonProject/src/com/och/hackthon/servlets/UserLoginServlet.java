@@ -29,11 +29,8 @@ public class UserLoginServlet extends HttpServlet {
 		User user = service.getUser(username, conn);
 		
 		if(user.equals(null)){
-			String message = String.format(
-					"对不起，用户名或密码有误！！请重新登录！2秒后为您自动跳到登录页面！！<meta http-equiv='refresh' content='2;url=%s'",
-					req.getContextPath() + "/servlet/UserLoginUIServlet");
-			req.setAttribute("message", message);
-			req.getRequestDispatcher("/message.jsp").forward(req, resp);
+			System.out.println("sorry, user does not exists.");
+			req.getRequestDispatcher("/index.jsp").forward(req, resp);
 			return;
 		}
 		
