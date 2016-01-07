@@ -11,7 +11,7 @@
 				<tr>
 					<td>username</td>
 					<td>
-						<%--使用EL表达式${}提取存储在request对象中的formbean对象中封装的表单数据(formbean.userName)以及错误提示消息(formbean.errors.userName)--%>
+						<%--01使用EL表达式${}提取存储在request对象中的formbean对象中封装的表单数据(formbean.userName)以及错误提示消息(formbean.errors.userName)--%>
 						<input type="text" name="userName" value="${formbean.userName}">${formbean.errors.userName}
 					</td>
 				</tr>
