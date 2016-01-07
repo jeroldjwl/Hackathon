@@ -13,17 +13,33 @@ import com.och.hackthon.util.DBConnUtil;
 
 import com.och.hackthon.services.*;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 澶勭悊鐢ㄦ埛娉ㄥ唽鐨凷ervlet
  * @author gacl
  *
  */
 public class UserRegisterServlet extends HttpServlet {
+	
+	private Map<String, String> errors = new HashMap<String, String>();
+
+	public Map<String, String> getErrors() {
+		return errors;
+	}
+
+	public void setErrors(Map<String, String> errors) {
+		this.errors = errors;
+	}
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		
+		
 		try {
+			
+			boolean isOk = true;
 			
 			DBConnUtil dbConnUtil = new DBConnUtil();
 			
@@ -32,6 +48,29 @@ public class UserRegisterServlet extends HttpServlet {
 			String username = req.getParameter("username");
 			
 			String password = req.getParameter("password");
+			
+			if (username == null || username.trim().equals("")) {
+				isOk = false;
+				errors.put("username", "用户名不能为空！！");
+			} else {
+				if (!username.matches("\\d{11}")) {
+					isOk = false;
+					errors.put("username", "用户名必须是11位的手机号码！！");
+					return;
+				}
+			}
+
+			if (password == null || password.trim().equals("")) {
+				isOk = false;
+				errors.put("userPwd", "密码不能为空！！");
+			} else {
+				if (!password.matches("\\d{3,8}")) {
+					isOk = false;
+					errors.put("userPwd", "密码必须是3-8位的数字！！");
+					return;
+				}
+			}
+			
 
 			User user = new User();
 			
