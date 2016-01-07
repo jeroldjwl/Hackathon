@@ -11,10 +11,13 @@ public class User {
 	private String gender;
 	private String address;
 	private int userRole;
-	
-	public User(ResultSet rs)
-	{
-		
+
+	public User() {
+
+	}
+
+	public User(ResultSet rs) {
+
 	}
 
 	public String getUserName() {
@@ -81,5 +84,4 @@ public class User {
 		this.userRole = userRole;
 	}
 
-	
 }
