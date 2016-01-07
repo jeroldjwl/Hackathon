@@ -37,6 +37,8 @@ public class UserService {
 			rs = ps.executeQuery();
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}finally {
+			DBConnUtil.releaseConn();
 		}
 		return rs;
 	}

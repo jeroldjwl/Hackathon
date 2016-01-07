@@ -38,6 +38,8 @@ public class BookService {
 			rs = ps.executeQuery();
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			DBConnUtil.releaseConn();
 		}
 		return rs;
 	}
@@ -69,6 +71,8 @@ public class BookService {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			DBConnUtil.releaseConn();
 		}
 		return true;
 	}
@@ -109,6 +113,8 @@ public class BookService {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			DBConnUtil.releaseConn();
 		}
 		return true;
 	}
@@ -133,6 +139,8 @@ public class BookService {
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
+			} finally {
+				DBConnUtil.releaseConn();
 			}
 		}
 		return remainStock;
@@ -152,9 +160,28 @@ public class BookService {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			DBConnUtil.releaseConn();
 		}
 		return stock;
 	}
+
+	public ResultSet getSearchBooks(String keyWord, Connection conn) {
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		try {
+			ps = conn.prepareStatement(getSearchResultSQL);
+			ps.setString(1, keyWord);
+			rs = ps.executeQuery();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBConnUtil.releaseConn();
+		}
+		return rs;
+	}
+
+	private String getSearchResultSQL = "select * from Book where BookName like '%?%'";
 
 	private String getBookSQL = "select * from Book where BookNo=? and BookName=?";
 
@@ -171,6 +198,5 @@ public class BookService {
 	private String deleteBookSQL = "delete from Book where BookNo=? and BookName=?";
 
 	private String getAllBooksSQL = "select b.BookNo, b.BookName, b.Description, b.Author, b.Publisher, b.Category, b.ImgPath from Book b, Inventory i where b.BookNo = i.BookNo and b.BookName=i.BookName ";
-	
 
 }
