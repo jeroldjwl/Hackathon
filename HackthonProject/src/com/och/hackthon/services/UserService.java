@@ -17,10 +17,11 @@ public class UserService {
 			ps = conn.prepareStatement(getUserSQL);
 			ps.setString(1, userName);
 			ResultSet rs = ps.executeQuery();
-			if (rs != null) {
+			if (rs.next()) {
 				user = new User(rs);
-				return user;
 			}
+			return user;
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -98,11 +99,11 @@ public class UserService {
 		return true;
 	}
 
-	private String getUserSQL = "select * from User where UserName=?";
+	private String getUserSQL = "select * from User where UserName = ?";
 
 	private String registerSQL = "insert into User (UserName, Password, UserRole) values(?,?,?)";
 
-	private String insertSQL = "insert into User (name, age, height, address) values(?,?,?,?)";
+	private String insertSQL = "insert into User (UserName, NickName, RealName, Age, Gender, Address, Password, UserRole, Email) values(?,?,?,?,?,?,?,?,?)";
 
 	private String updateSQL = "update User set name=?";
 
