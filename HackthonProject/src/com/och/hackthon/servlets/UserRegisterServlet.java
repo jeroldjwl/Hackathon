@@ -40,16 +40,17 @@ public class UserRegisterServlet extends HttpServlet {
 		
 		try {
 			
-			
 			boolean isOk = true;
 			
 			Connection conn = DBConnUtil.getConnection();
 			
-			String username = req.getParameter("username");
+			String username = req.getParameter("userName");
 			
 			System.out.println(username);
 			
 			String password = req.getParameter("password");
+			
+			System.out.println(password);
 			
 			if (username == null || username.trim().equals("")) {
 				isOk = false;
