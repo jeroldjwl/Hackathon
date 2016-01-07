@@ -43,22 +43,30 @@
 		<div id="pagetopid"></div>
 		<div class="searchRes_container ">
 			<div class="sidebar_left">
-				<div class="sidebar_left_cap">
-					<h5 class="h5">
-						<span>Filter Search Results By...</span>
-					</h5>
-				</div>
 				<div class="lp_left_list_results" id="lp_left_list_results">
-					<div>
-						<h5 class="h5">Category</h5>
-						<ul id="categories_list">
-							<li style="padding-left: 0;"></li>
-							<li class=""><a><strong>Business&nbsp;(1101)</strong></a></li>
-							<li class=""><a><strong>Desktop and Web
-										Applications&nbsp;(718)</strong></a></li>
-							<li class=""><a><strong>Digital
+					<div id="leftNavigation">
+						<ul id="categories_list" style="padding-left: 40px;">
+							<li class=""><a href="#"><strong>Business&nbsp;(1101)</strong></a></li>
+							<p></p>
+							<li class=""><a href="#"><strong>Desktop and
+										Web Applications&nbsp;(718)</strong></a></li>
+							<p></p>
+							<li class=""><a href="#"><strong>Digital
 										Media&nbsp;(958)</strong></a></li>
-							<li class=""><a><strong>Engineering&nbsp;(289)</strong></a></li>
+							<p></p>
+							<li class=""><a href="#"><strong>Information
+										Technology & Software Development&nbsp;(849)</strong></a></li>
+							<p></p>
+							<li class=""><a href="#"><strong>Math &
+										Science&nbsp;(248)</strong></a></li>
+							<p></p>
+							<li class=""><a href="#"><strong>Personal &
+										Professional Development&nbsp;(152)</strong></a></li>
+							<p></p>
+							<li class=""><a href="#"><strong>Product&nbsp;(3788)</strong></a></li>
+							<p></p>
+							<li class=""><a href="#"><strong>Vendor&nbsp;(4301)</strong></a></li>
+							<p></p>
 						</ul>
 					</div>
 				</div>
@@ -77,7 +85,7 @@
 										<button onclick="search('key');return false;"
 											class="button cw-icon"
 											clstag="shangpin|keycount|toplist1|b03">
-											<i></i>Search
+											<i></i>SEARCH
 										</button>
 									</div>
 								</div>
@@ -85,7 +93,7 @@
 						</div>
 					</div>
 				</div>
-				<div id="searchtop">
+				<div id="searchtop" style="margin-top: 50px;">
 					<div>
 
 						<div class="searchMore_box">
@@ -113,10 +121,10 @@
 												<option value="INMYFOLDERS">Any Private Folder</option>
 												<option value="3671242">- Big data</option>
 												<option value="3659499">- Presentation</option>
-												<option value="3508162">- My List</option></select><span> </span><input
-												type="text" style="visibility: hidden; display: none;"><input
-												class="btn" id="submitnewword" alt="Search Within Results"
-												value="Search Within Results"
+												<option value="3508162">- My List</option></select> <input
+												type="text" style="visibility: hidden; display: none;">
+											<input class="btn" id="submitnewword"
+												alt="Search Within Results" value="Search Within Results"
 												src="./images/btn_search_searchwithin.gif" type="image"
 												name="__submitnewword" title="Search Within Results">
 										</p>
@@ -133,17 +141,16 @@
 					<table class="searchRes_table " id="searchanchor_9781784399092"
 						cellspacing="0" cellpadding="0" style="margin-top: 10px;">
 						<tbody>
-							<%
-								ResultSet rs = null;
-								UserService us = new UserService();
-								BookService bs = new BookService();
-								Connection conn = DBConnUtil.getConnection();
-								rs = bs.getAllBooks(conn);
-								while (rs.next()) {
-									/* out.println(
-											rs.getString("BookNo") + ", " + rs.getString("BookName") + ", " + rs.getString("Description")
-													+ "," + rs.getString("imgPath") + rs.getString("Publisher") + rs.getString("Author")); */
-							%>
+							<%-- <%
+					ResultSet rs = null;
+					UserService us = new UserService();
+					BookService bs = new BookService();
+					Connection conn = DBConnUtil.getConnection();
+					rs = bs.getAllBooks(conn);
+					 while (rs.next()) {
+						out.println(
+								rs.getString("BookNo") + ", " + rs.getString("BookName") + ", " + rs.getString("Description")+","+rs.getString("imgPath")+rs.getString("Publisher")+rs.getString("Author"));
+				%> --%>
 							<tr valign="top">
 								<td class="searchRes_number" width="6%">
 									<div style="width: 100%;"></div> <input
@@ -161,10 +168,12 @@
 														<img class="bookCover"
 															alt="RESTful Java Web Services - Second Edition"
 															title="RESTful Java Web Services - Second Edition"
-															width="76" src="<%=rs.getString("imgPath")%>">
+															width="76" src="./images/9781784399092_xs.jpg">
 													</div>
 													<div class="bookData">
-														<p class="p bookTitle">RESTful Java</p>
+														<p class="p bookTitle" style="margin-top: 8px;">RESTful
+															Java</p>
+														<P></P>
 														<p class="p bookText bookAuthors">
 															<strong class="strong">By:&nbsp;</strong>Jobinesh
 															Purushothaman
@@ -173,7 +182,9 @@
 															<strong class="strong">Publisher:&nbsp;</strong>Packt
 															Publishing
 														</p>
-														<p class="p bookText bookPublicationDate"></p>
+														<form action="">
+															<button type="submit" class="booklistsubmit">SUBMIT</button>
+														</form>
 													</div>
 												</div>
 											</div>
@@ -182,26 +193,57 @@
 								</td>
 								<td class="searchRes_content" width="30%">
 									<div style="width: 100%;">
-										<p class="p section_info">Chapter Title: Asynchronous
-											RESTful web services</p>
-										<div class="snippet">
-											<!-- Asynchronous RESTful <span class="SearchHighlight">web
+										<p class="p section_info">
+											<b>Chapter Title: Asynchronous RESTful web services</b>
+										</p>
+										<div class="snippet" style="max-height: 70px;">
+											Asynchronous RESTful <span class="SearchHighlight">web
 												services</span> Asynchronous RESTful <span class="SearchHighlight">web
 												services</span> All the discussions on the RESTful <span
 												class="SearchHighlight">web services</span> that we have had
 											so far were based on the synchronous request and response
 											model. When a client invokes a RESTful web API synchronously,
-											the -->
-											<%=rs.getString("Description")%>
+											the
 										</div>
 									</div>
 								</td>
 							</tr>
-							<%
-								}
-							%>
+							<%-- <%}
+		%>	  --%>
 						</tbody>
 					</table>
+					<hr>
+					<div class="pagination">
+						<p id="pageNaviation" class="p nobotpad">
+							<span class="span count"><span>1-20 of </span><strong
+								class="strong">10934 Items</strong></span><strong class="strong"><span>
+							</span><span class="disabledblacktext">&lt; Prev</span><span
+								class="disabledblacktext"> | </span><span class="cur_num">1</span><span
+								class="disabledblacktext"> </span><a class="nums"
+								href="?page=1&amp;srcfilters=7&amp;sort=rank&amp;order=desc&amp;te=,&amp;srcuserquery=(web+services)"
+								onclick="link('page=1&amp;srcfilters=7&amp;sort=rank&amp;order=desc&amp;te=,&amp;srcuserquery=(web+services)', 'searchresults'); return false;"
+								data-bow-ajax="searchresults">2</a><span
+								class="disabledblacktext"> </span><a class="nums"
+								href="?page=2&amp;srcfilters=7&amp;sort=rank&amp;order=desc&amp;te=,&amp;srcuserquery=(web+services)"
+								onclick="link('page=2&amp;srcfilters=7&amp;sort=rank&amp;order=desc&amp;te=,&amp;srcuserquery=(web+services)', 'searchresults'); return false;"
+								data-bow-ajax="searchresults">3</a><span
+								class="disabledblacktext"> </span><a class="nums"
+								href="?page=3&amp;srcfilters=7&amp;sort=rank&amp;order=desc&amp;te=,&amp;srcuserquery=(web+services)"
+								onclick="link('page=3&amp;srcfilters=7&amp;sort=rank&amp;order=desc&amp;te=,&amp;srcuserquery=(web+services)', 'searchresults'); return false;"
+								data-bow-ajax="searchresults">4</a><span
+								class="disabledblacktext"> </span><a class="nums"
+								href="?page=4&amp;srcfilters=7&amp;sort=rank&amp;order=desc&amp;te=,&amp;srcuserquery=(web+services)"
+								onclick="link('page=4&amp;srcfilters=7&amp;sort=rank&amp;order=desc&amp;te=,&amp;srcuserquery=(web+services)', 'searchresults'); return false;"
+								data-bow-ajax="searchresults">5</a><span
+								class="disabledblacktext">...</span><a class="nums"
+								href="?page=546&amp;srcfilters=7&amp;sort=rank&amp;order=desc&amp;te=,&amp;srcuserquery=(web+services)"
+								onclick="link('page=546&amp;srcfilters=7&amp;sort=rank&amp;order=desc&amp;te=,&amp;srcuserquery=(web+services)', 'searchresults'); return false;"
+								data-bow-ajax="searchresults">547</a><span
+								class="disabledblacktext"> | </span><a class="pagenext"
+								href="?page=1&amp;srcfilters=7&amp;sort=rank&amp;order=desc&amp;te=,&amp;srcuserquery=(web+services)"
+								data-bow-ajax="searchresults" title="Next >">Next &gt;</a></strong>
+						</p>
+					</div>
 					<div class="bottom"></div>
 
 				</div>

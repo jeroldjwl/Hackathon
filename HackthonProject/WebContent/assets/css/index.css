@@ -36,6 +36,23 @@ div.loginbutton{
 #userloginbutton{
     background: #FDBF57
 }
+.booklistsubmit{
+	background-color: #00467F;
+	width:170px;	
+	align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    color: buttontext;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    background-color: buttonface;
+    box-sizing: border-box;
+    padding: 2px 6px 3px;
+    border: 2px outset buttonface;
+}
 .upper {
     padding: 10px 0;
     height:68px;
@@ -78,16 +95,19 @@ div.loginbutton{
     margin: 5px 10px 0;
     padding: 0;
     overflow: hidden;
-    font-size: 10px;
+    border: 1px solid #BFC9D5;
+    background: #E7EEF3;
+    margin-top: 50px;
+    height: 500px;
 }
 .sidebar_left .sidebar_left_cap h5, .sidebar_left .bucket_cap h5 {
     margin: 0 0 0 5px;
     padding: 5px 15px 5px 0;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: bold;
 }
 .lp_left_list_results {
-    font-size: 11px;
+    font-size: 14px;
 }
 .hdr_block{
 	float: right;
@@ -111,6 +131,7 @@ div.loginbutton{
 
 .bookCover {
     float: left;
+    margin-top:8px;
 }
 
 .bookData {
@@ -123,11 +144,11 @@ div.loginbutton{
     width: 185px;
     padding: 0 0 4px 0;
     margin: 0;
-    font-size: 12px;
+    font-size: 14px;
 }
 .bookText {
     width: 190px;
-    font-size: 10px;
+    font-size: 14px;
     padding: 0 0 2px 0;
     margin: 0;
 }
@@ -136,13 +157,13 @@ div.loginbutton{
     margin-right: 15px;
 }
 .bluBrdrBox1 {
-    margin: 0 0 12px 0;
+    margin: 0 0 14px 0;
     border: 1px solid #BFC9D5;
     background: #E7EEF3;
     height:120px
 }
 .bluBrdrBox0 {
-    margin: 0 0 12px 0;
+    margin: 0 0 14px 0;
     border: 1px solid #BFC9D5;
     background: #E7EEF3;
     height:60px
@@ -175,4 +196,15 @@ user agent stylesheettr {
 }
 .booklistcheckbox{
 	margin-top: 58px;
+}
+
+.pagination {
+    text-align: right;
+    padding: 6px 12px 6px 0;
+}
+#pageNaviation{
+    margin: 0 0 12px 0;
+    padding: 0;
+    font-size: 11px;
+    line-height: 1.2em;
 }
