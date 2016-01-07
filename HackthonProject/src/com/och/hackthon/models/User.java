@@ -1,6 +1,7 @@
 package com.och.hackthon.models;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class User {
 	private String userName;
@@ -8,13 +9,28 @@ public class User {
 	private String realName;
 	private String password;
 	private int age;
-	private String gender;
+	private int gender;
 	private String address;
 	private int userRole;
-	
-	public User(ResultSet rs)
-	{
-		
+	private String email;
+
+	public User() {
+
+	}
+
+	public User(ResultSet rs) {
+		try {
+			this.userName = rs.getString("UserName");
+			this.nickName = rs.getString("NickName");
+			this.realName = rs.getString("RealName");
+			this.password = rs.getString("Password");
+			this.age = rs.getInt("age");
+			this.gender = rs.getInt("Gender");
+			this.address = rs.getString("Address");
+			this.userRole = rs.getInt("UserRole");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public String getUserName() {
@@ -57,11 +73,11 @@ public class User {
 		this.age = age;
 	}
 
-	public String getGender() {
+	public int getGender() {
 		return gender;
 	}
 
-	public void setGender(String gender) {
+	public void setGender(int gender) {
 		this.gender = gender;
 	}
 
@@ -81,5 +97,12 @@ public class User {
 		this.userRole = userRole;
 	}
 
-	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 }
