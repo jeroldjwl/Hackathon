@@ -40,7 +40,6 @@ public class AdminOperationServlet {
 				user.setUserName(username);
 				user.setPassword(password);
 				
-				
 				UserService service = new UserService();
 				
 				boolean flag = service.insertUser(user, conn);
@@ -75,7 +74,6 @@ public class AdminOperationServlet {
 				book.setBookNO(bookNO);
 				book.setBookName(bookName);
 				
-				
 				BookService service = new BookService();
 				
 				boolean flag = service.insertBook(book, toNum, conn);
@@ -92,7 +90,6 @@ public class AdminOperationServlet {
 				book.setBookNO(bookNO);
 				book.setBookName(bookName);
 				
-				
 				BookService service = new BookService();
 				
 				boolean flag = service.deleteBook(bookNO, bookName, stock, conn);
@@ -103,23 +100,26 @@ public class AdminOperationServlet {
 				Connection conn = DBConnUtil.getConnection();
 				BookService service = new BookService();
 		    	Book book = service.getBook(bookNO, bookName, conn);
+		    	req.getSession().setAttribute("book", book);
 		    }
 		    else if(action.equals("AllBookInfo")){
 		    	Connection conn = DBConnUtil.getConnection();
 				BookService service = new BookService();
 				ResultSet rs = service.getAllBooks(conn);
-				
+				req.getSession().setAttribute("allBookInfo", rs);
 		    }
 		    else if(action.equals("SingleUserInfo")){
 		    	String username = req.getParameter("username");
 		    	Connection conn = DBConnUtil.getConnection();
 		    	UserService service = new UserService();
 		    	User user = service.getUser(username, conn);
+		    	req.getSession().setAttribute("user", user);
 		    }
 		    else if(action.equals("AllUserInfo")){
 		    	Connection conn = DBConnUtil.getConnection();
 		    	UserService service = new UserService();
 		    	ResultSet rs = service.getAllUsers(conn);
+		    	req.getSession().setAttribute("allUserInfo", rs);
 		    }
 	}
 }
