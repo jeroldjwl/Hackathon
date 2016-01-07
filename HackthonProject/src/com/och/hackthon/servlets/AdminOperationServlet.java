@@ -45,7 +45,40 @@ public class AdminOperationServlet {
 				boolean flag = service.insertUser(user, conn);
 				
 		    }
+		    else if(action.equals("deleteUser")){
+		    	String username = req.getParameter("username");
+				String password = req.getParameter("password");
+				
+				User user = new User();
+				
+				Connection conn = DBConnUtil.getConnection();
+				
+				user.setUserName(username);
+				user.setPassword(password);
+				
+				
+				UserService service = new UserService();
+				
+				boolean flag = service.delete(username, conn);
+				
+		    }
 		    else if(action.equals("addBook")){
+		    	String bookNO = req.getParameter("bookNO");
+				String bookName = req.getParameter("bookName");
+				
+				Book book = new Book();
+				
+				Connection conn = DBConnUtil.getConnection();
+				
+				book.setBookNO(bookNO);
+				book.setBookName(bookName);
+				
+				
+				BookService service = new BookService();
+				
+				boolean flag = service.insertBook(book, conn);
+		    }
+		    else if(action.equals("deleteBook")){
 		    	String bookNO = req.getParameter("bookNO");
 				String bookName = req.getParameter("bookName");
 				
