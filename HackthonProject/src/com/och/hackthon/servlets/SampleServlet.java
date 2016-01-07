@@ -22,6 +22,7 @@ public class SampleServlet extends HttpServlet {
 		Connection conn = DBConnUtil.getConnection();
 		rs = us.getAllUsers(conn);
 		req.getSession().setAttribute("users", rs);
+		req.getRequestDispatcher("/Test2.jsp").forward(req, resp);
 	}
 
 	@Override

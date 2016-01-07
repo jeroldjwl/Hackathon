@@ -11,6 +11,7 @@
 		$("#userManage").click(function() {
 			//var url = "index.jsp";
 			var url = "servlet/SampleServlet";
+			alert(1);
 			var data = {};
 			$.ajax({
 				type : "get",
@@ -31,6 +32,7 @@
 		$("#bookManage").click(function() {
 			//var url = "index.jsp";
 			var url = "servlet/SampleServlet2";
+			alert(2);
 			var data = {};
 			$.ajax({
 				type : "get",

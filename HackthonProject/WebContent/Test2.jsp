@@ -26,7 +26,7 @@
 	rs = bs.getAllBooks(conn);
 	while (rs.next()) {
 		out.println(
-				rs.getString("BookNo") + ", " + rs.getString("BookName") + ", " + rs.getString("Description"));
+				rs.getString("BookNo") + ", " + rs.getString("BookName"));
 	}
 %>
 </body>
