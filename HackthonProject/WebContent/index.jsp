@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="toplogin">		
-<form action="${pageContext.request.contextPath }/servlet/LoginServlet" method="post" class="toplogin">
+<form action="${pageContext.request.contextPath }/servlet/UserLoginServlet" method="post" class="toplogin">
 	  <span class="toplogin"></span>
 	  <input type="text" class="toplogin"" placeholder="ursername"/>
 	  <span class="entypo-key inputPassIcon"></span>
