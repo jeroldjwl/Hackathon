@@ -70,10 +70,12 @@ public class UserOperationServlet {
 		    	req.getRequestDispatcher("userHome.jsp").forward(req,resp);
 		    }
 		    else if(action.equals("borrowBooks")){
-		    	Connection conn = DBConnUtil.getConnection();
-		    	String bookNO = req.getParameter("bookNO");
-				String bookName = req.getParameter("bookName");
-				BookService service = new BookService();
+		    	synchronized (this) {
+		    		Connection conn = DBConnUtil.getConnection();
+			    	String bookNO = req.getParameter("bookNO");
+					String bookName = req.getParameter("bookName");
+					BookService service = new BookService();
+				}
 		    }
 	}
 }
