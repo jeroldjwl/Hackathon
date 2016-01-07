@@ -11,27 +11,27 @@
 			<div id="stuInfo"><br><br><font size="3">book editing info</br></br>
 					<table border="0" align="center">
 						<tr>
-							<td align="left">book id：</td>
+							<td align="left">book id</td>
 							<td><input type="text" name="newNO" value=" "></td>
 						</tr>
 						<tr>
-							<td align="left">book name：</td>
+							<td align="left">book name</td>
 							<td><input type="text" name="bName" value=" "></td>
 						</tr>
 						<tr>
-							<td align="left">author：</td>
+							<td align="left">author</td>
 							<td><input type="text" name="author" value=" "></td>							
 						</tr>
 						<tr>
-							<td align="left">press：</td>
+							<td align="left">press</td>
 							<td><input type="text" name="publish" value=""></td>
 						</tr>
 						<tr>
-							<td align="left">ISBN NO：</td>
+							<td align="left">ISBN NO</td>
 							<td><input type="text" name="isbn" value=" "></td>
 						</tr>
 						<tr>
-							<td align="left">PRICE：</td>
+							<td align="left">PRICE</td>
 							<td><input type="text" name="price" value=" "></td>
 						</tr>
 						<tr>
@@ -44,7 +44,7 @@
 </td>
 </tr>					
 					</table>
-				</form>
+
 			</div>
 </div>
 </body>

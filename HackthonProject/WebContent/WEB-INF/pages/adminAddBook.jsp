@@ -21,7 +21,7 @@
 							<td><input type="text" name="bName"></td>
 						</tr>
 						<tr>
-							<td align="left">author：</td>
+							<td align="left">author</td>
 							<td><input type="text" name="author"></td>							
 						</tr>
 						<tr>
@@ -29,7 +29,7 @@
 							<td><input type="text" name="publish"></td>
 						</tr>
 						<tr>
-							<td align="left">ISBN no.</td>
+							<td align="left">ISBN NO.</td>
 							<td><input type="text" name="isbn"></td>
 						</tr>
 						<tr>
