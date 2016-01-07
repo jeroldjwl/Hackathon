@@ -38,7 +38,8 @@ div.loginbutton{
 }
 .upper {
     padding: 10px 0;
-    height:68px
+    height:68px;
+    background-color: #00467F;
 }
 .wrap{
     width: 970px;
@@ -46,6 +47,13 @@ div.loginbutton{
 }
 .right {
     float: right;
+}
+.left {
+    display: inline-block;
+    max-width: 565px;
+    white-space: nowrap;
+    overflow: hidden;
+    color: white;
 }
 .searchModule {
     display: inline-block;
@@ -56,6 +64,51 @@ div.loginbutton{
     background: -webkit-linear-gradient(top,#135084 0,#053f75 100%);   
     box-shadow: 0 1px 0 #386a96,0 -1px 0 #0b3c64;
 }
+.pagewrap {
+    width: 1000px;
+    text-align: left;
+    margin: 0 auto;
+}
+#pagetopid {
+    margin-bottom: 10px;
+}
+.sidebar_left {
+    float: left;
+    width: 255px;
+    margin: 5px 10px 0;
+    padding: 0;
+    overflow: hidden;
+    font-size: 10px;
+}
+.sidebar_left .sidebar_left_cap h5, .sidebar_left .bucket_cap h5 {
+    margin: 0 0 0 5px;
+    padding: 5px 15px 5px 0;
+    font-size: 12px;
+    font-weight: bold;
+}
+.lp_left_list_results {
+    font-size: 11px;
+}
+.hdr_block{
+	float: right;
+}
+.paneR {
+    float: right;
+    width: 72%;
+}
+.bluBrdrBox1 {
+    margin: 0 0 12px 0;
+    border: 1px solid #BFC9D5;
+    background: #E7EEF3;
+}
+#searchinput{
+	    font-size: 11px;
+    font-family: verdana;
+}
+.blubrBoxContent {
+    padding: 5px 0 5px 10px;
+}
+
 .bookCover {
     float: left;
 }
@@ -86,7 +139,13 @@ div.loginbutton{
     margin: 0 0 12px 0;
     border: 1px solid #BFC9D5;
     background: #E7EEF3;
-    height:100px
+    height:120px
+}
+.bluBrdrBox0 {
+    margin: 0 0 12px 0;
+    border: 1px solid #BFC9D5;
+    background: #E7EEF3;
+    height:60px
 }
 
 .searchRes_content {
@@ -113,4 +172,7 @@ user agent stylesheettr {
 }
 .blubrBoxContent {
     padding: 5px 8px;
+}
+.booklistcheckbox{
+	margin-top: 58px;
 }
