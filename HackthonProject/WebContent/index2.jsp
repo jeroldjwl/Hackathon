@@ -18,6 +18,13 @@
 	<h1>首页网站</h1>
 	<hr />
 	<c:if test="${user==null}">
+	
+		<form name="logout" action="servlet/UserOperationServlet" method="post">
+			用户名：<input type="text" name="username"><br/>
+    		密码：<input type="password" name="password"><br/>
+    		<input type="hidden" name="action" value="logout">
+    		<input type="submit" value="logout">
+		</form>
 		<a href="${pageContext.request.contextPath}/servlet/RegisterUIServlet"
 			target="_blank">注册03</a>
 		<a href="${pageContext.request.contextPath}/servlet/LoginUIServlet"
