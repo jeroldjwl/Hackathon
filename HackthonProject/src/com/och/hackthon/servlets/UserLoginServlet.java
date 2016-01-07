@@ -37,10 +37,7 @@ public class UserLoginServlet extends HttpServlet {
 		}
 
 		req.getSession().setAttribute("user", user);
-		String message = String.format("恭喜：%s,登陆成功！本页将在3秒后跳到首页！！<meta http-equiv='refresh' content='3;url=%s'",
-				user.getUserName(), req.getContextPath() + "userHome.jsp");
-		req.setAttribute("message", message);
-		req.getRequestDispatcher("/message.jsp").forward(req, resp);
+		req.getRequestDispatcher("/WEB-INF/pages/userHome.jsp").forward(req, resp);
 
 	}
 
