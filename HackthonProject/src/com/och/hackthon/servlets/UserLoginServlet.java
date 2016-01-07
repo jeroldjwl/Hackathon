@@ -20,8 +20,6 @@ public class UserLoginServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		super.doGet(req, resp);
-		
 		DBConnUtil dbConnUtil = new DBConnUtil();
 		
 		Connection conn = dbConnUtil.getConnection();
@@ -55,14 +53,7 @@ public class UserLoginServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		super.doPost(req, resp);
-	}
-
-	@Override
-	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		super.service(req, resp);
+		doGet(req,resp);
 	}
 	
 }

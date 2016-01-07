@@ -9,11 +9,11 @@
 </head>
 <body>
 <div class="toplogin">		
-<form action="${pageContext.request.contextPath }/servlet/UserLoginServlet" method="post" class="toplogin">
+<form action="${pageContext.request.contextPath }/servlet/UserLoginServlet" method="get" class="toplogin">
 	  <span class="toplogin"></span>
-	  <input type="text" class="toplogin"" placeholder="ursername"/>
+	  <input type="text" class="toplogin"" name="username"/>
 	  <span class="entypo-key inputPassIcon"></span>
-	  <input type="password" class="pass"placeholder="password"/>
+	  <input type="password" class="pass"name="password"/>
 	  <button class="submit">Login<span class="entypo-lock"></span></button>
 	  <button class="submit">Register<span class="entypo-lock"></span></button>
     </form>
