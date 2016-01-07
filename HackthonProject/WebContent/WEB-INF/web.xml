@@ -4,6 +4,28 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	id="WebApp_ID" version="3.0">
 	<display-name>HackthonProject</display-name>
+	
+	<servlet>
+		<servlet-name>UserLoginServlet</servlet-name>
+		<servlet-class>com.och.hackthon.servlets.UserLoginServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>UserLoginUIServlet</servlet-name>
+		<servlet-class>com.och.hackthon.servlets.UserLoginUIServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>UserRegisterServlet</servlet-name>
+		<servlet-class>com.och.hackthon.servlets.UserRegisterServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>UserRegisterUIServlet</servlet-name>
+		<servlet-class>com.och.hackthon.servlets.UserRegisterUIServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AdminLoginUIServlet</servlet-name>
+		<servlet-class>com.och.hackthon.servlets.AdminLoginUIServlet</servlet-class>
+	</servlet>
+	
 	<servlet>
 		<servlet-name>LoginUIServlet</servlet-name>
 		<servlet-class>web.UI.LoginUIServlet</servlet-class>
@@ -24,6 +46,29 @@
 		<servlet-name>LogoutServlet</servlet-name>
 		<servlet-class>web.controller.LogoutServlet</servlet-class>
 	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>UserLoginServlet</servlet-name>
+		<url-pattern>/servlet/UserLoginServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserLoginUIServlet</servlet-name>
+		<url-pattern>/servlet/UserLoginUIServlet</url-pattern>
+	</servlet-mapping>
+		<servlet-mapping>
+		<servlet-name>UserRegisterServlet</servlet-name>
+		<url-pattern>/servlet/UserRegisterServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserRegisterUIServlet</servlet-name>
+		<url-pattern>/servlet/UserRegisterUIServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AdminLoginUIServlet</servlet-name>
+		<url-pattern>/servlet/AdminLoginUIServlet</url-pattern>
+	</servlet-mapping>
+	
+	
 	<servlet-mapping>
 		<servlet-name>LoginUIServlet</servlet-name>
 		<url-pattern>/servlet/LoginUIServlet</url-pattern>
