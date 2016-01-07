@@ -113,6 +113,31 @@ public class BookService {
 		return true;
 	}
 
+	public int borrowBook(String bookNo, String bookName, int num, Connection conn) {
+		PreparedStatement ps = null;
+		int remainStock = getStock(bookNo, bookName, conn);
+		if (remainStock < num)
+			return remainStock - num;
+		else {
+			try {
+				conn.setAutoCommit(false);
+				remainStock = remainStock - num;
+				ps = conn.prepareStatement(deleteInventorySQL);
+				ps.setInt(1, remainStock);
+				ps.setString(2, bookNo);
+				ps.setString(3, bookName);
+				int flag = ps.executeUpdate();
+				conn.commit();
+				if (flag == 0) {
+					return -100;
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return remainStock;
+	}
+
 	private int getStock(String bookNo, String bookName, Connection conn) {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -146,5 +171,6 @@ public class BookService {
 	private String deleteBookSQL = "delete from Book where BookNo=? and BookName=?";
 
 	private String getAllBooksSQL = "select b.BookNo, b.BookName, b.Description, b.Author, b.Publisher, b.Category, b.ImgPath from Book b, Inventory i where b.BookNo = i.BookNo and b.BookName=i.BookName ";
+	
 
 }
