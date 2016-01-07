@@ -12,7 +12,7 @@ public class UserLoginUIServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 
-		req.getRequestDispatcher("/WEB-INF/pages/index.jsp").forward(req, resp);
+		req.getRequestDispatcher("/index.jsp").forward(req, resp);
 	}
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)

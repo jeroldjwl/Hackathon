@@ -12,19 +12,19 @@
 					<td>username</td>
 					<td>
 						<%--01使用EL表达式${}提取存储在request对象中的formbean对象中封装的表单数据(formbean.userName)以及错误提示消息(formbean.errors.userName)--%>
-						<input type="text" name="userName" value="${formbean.userName}">${formbean.errors.userName}
+						<input type="text" name="userName">
 					</td>
 				</tr>
 				<tr>
 					<td>password</td>
 					<td>
-						<input type="password" name="userPwd" value="${formbean.userPwd}">${formbean.errors.userPwd}
+						<input type="password" name="password">
 					</td>
 				</tr>
 				<tr>
 					<td>confirm</td>
 					<td>
-						<input type="password" name="confirmPwd" value="${formbean.confirmPwd}">${formbean.errors.confirmPwd}
+						<input type="password" name="confirmPwd">
 					</td>
 				</tr>
 				<tr>

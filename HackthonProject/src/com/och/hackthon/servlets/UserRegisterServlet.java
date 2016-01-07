@@ -23,6 +23,7 @@ import java.util.Map;
  */
 public class UserRegisterServlet extends HttpServlet {
 	
+	
 	private Map<String, String> errors = new HashMap<String, String>();
 
 	public Map<String, String> getErrors() {
@@ -35,9 +36,10 @@ public class UserRegisterServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		
+	
 		
 		try {
+			
 			
 			boolean isOk = true;
 			
@@ -45,13 +47,15 @@ public class UserRegisterServlet extends HttpServlet {
 			
 			String username = req.getParameter("username");
 			
+			System.out.println(username);
+			
 			String password = req.getParameter("password");
 			
 			if (username == null || username.trim().equals("")) {
 				isOk = false;
 				errors.put("username", "用户名不能为空！！");
 			} else {
-				if (!username.matches("\\d{11}")) {
+				if (!username.matches("^1[0-9]{10}$")) {
 					isOk = false;
 					errors.put("username", "用户名必须是11位的手机号码！！");
 					return;
@@ -78,6 +82,7 @@ public class UserRegisterServlet extends HttpServlet {
 			
 			UserService service = new UserService();
 			
+			
 			if(service.getUser(username, conn)!=null){
 				System.out.println("对不起, 用户已存在.");
 				req.getRequestDispatcher("/WEB-INF/pages/register.jsp").forward(req, resp);
@@ -85,6 +90,7 @@ public class UserRegisterServlet extends HttpServlet {
 			}
 			
 			service.registerUser(user, conn);
+			
 			String message = String.format(
 					"注册成功！！3秒后为您自动跳到登录页面！！<meta http-equiv='refresh' content='3;url=%s'/>", 
 					req.getContextPath()+"/servlet/LoginUIServlet");
@@ -93,7 +99,10 @@ public class UserRegisterServlet extends HttpServlet {
 
 		} catch (Exception e) {
 			e.printStackTrace(); 
-			req.setAttribute("message", "对不起，注册失败！！");
+			String message = String.format(
+					"注册失败！！3秒后为您自动跳到登录页面！！<meta http-equiv='refresh' content='3;url=%s'/>", 
+					req.getContextPath()+"/servlet/UserRegisterUIServlet");
+			req.setAttribute("message", message);
 			req.getRequestDispatcher("/message.jsp").forward(req,resp);
 		}
 	}
