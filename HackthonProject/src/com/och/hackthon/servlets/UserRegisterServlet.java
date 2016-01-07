@@ -55,7 +55,7 @@ public class UserRegisterServlet extends HttpServlet {
 				isOk = false;
 				errors.put("username", "用户名不能为空！！");
 			} else {
-				if (!username.matches("\\d{11}")) {
+				if (!username.matches("^1[0-9]{10}$")) {
 					isOk = false;
 					errors.put("username", "用户名必须是11位的手机号码！！");
 					return;
