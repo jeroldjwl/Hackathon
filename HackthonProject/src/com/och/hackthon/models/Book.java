@@ -22,7 +22,7 @@ public class Book {
 	public void setBookNO(String bookNO) {
 		this.bookNO = bookNO;
 	}
-	
+
 	public String getBookName() {
 		return bookName;
 	}
@@ -30,7 +30,7 @@ public class Book {
 	public void setBookName(String bookName) {
 		this.bookName = bookName;
 	}
-	
+
 	public String getDescription() {
 		return description;
 	}
@@ -38,7 +38,7 @@ public class Book {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+
 	public String getAuthor() {
 		return author;
 	}
@@ -46,7 +46,7 @@ public class Book {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-	
+
 	public String getPublisher() {
 		return publisher;
 	}
@@ -62,4 +62,6 @@ public class Book {
 	public void setCategory(int category) {
 		this.category = category;
 	}
+
+	
 }
