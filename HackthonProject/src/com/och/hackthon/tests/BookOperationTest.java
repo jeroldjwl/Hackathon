@@ -12,7 +12,7 @@ public class BookOperationTest {
 	@Test
 	public void insertBookTest() {
 		Book book = new Book("ISO8891", "Thinking In Java", "This is a book about JAVA", "SomeOne", "Which Publisher",
-				1);
+				1, "");
 		int toNum = 5;
 		Connection conn = DBConnUtil.getConnection();
 		BookService bs = new BookService();
