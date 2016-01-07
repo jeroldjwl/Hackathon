@@ -29,6 +29,18 @@ public class UserService {
 		return user;
 	}
 
+	public ResultSet getAllUsers(Connection conn) {
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		try {
+			ps = conn.prepareStatement(getAllUserSQL);
+			rs = ps.executeQuery();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return rs;
+	}
+
 	public boolean registerUser(User u, Connection conn) {
 		PreparedStatement ps = null;
 		try {
@@ -121,4 +133,6 @@ public class UserService {
 	private String updateSQL = "update User set UserName = ?, NickName = ?, RealName = ?, Age = ?, Gender = ?, Address = ?, Password = ?, UserRole = ?, Email = ?";;
 
 	private String deleteSQL = "delete from User where UserName= ?";
+
+	private String getAllUserSQL = "select UserName, NickName, RealName, Age, Gender, Address, UserRole, Email from User";
 }

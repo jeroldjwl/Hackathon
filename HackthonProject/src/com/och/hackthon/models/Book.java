@@ -10,18 +10,21 @@ public class Book {
 	private String author;
 	private String publisher;
 	private int category;
+	private String imgPath;
 
 	public Book() {
 
 	}
 
-	public Book(String bookNo, String bookName, String description, String author, String publisher, int category) {
+	public Book(String bookNo, String bookName, String description, String author, String publisher, int category,
+			String imgPath) {
 		this.bookNO = bookNo;
 		this.bookName = bookName;
 		this.description = description;
 		this.author = author;
 		this.publisher = publisher;
 		this.category = category;
+		this.imgPath = imgPath;
 	}
 
 	public Book(ResultSet rs) {
@@ -83,6 +86,14 @@ public class Book {
 
 	public void setCategory(int category) {
 		this.category = category;
+	}
+
+	public String getImgPath() {
+		return imgPath;
+	}
+
+	public void setImgPath(String imgPath) {
+		this.imgPath = imgPath;
 	}
 
 }
