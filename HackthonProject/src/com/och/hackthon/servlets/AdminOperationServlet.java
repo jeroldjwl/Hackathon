@@ -14,7 +14,7 @@ import com.och.hackthon.services.UserService;
 import com.och.hackthon.util.DBConnUtil;
 
 
-public class AdminOperationServlet {
+public class AdminOperationServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 	throws ServletException, IOException{
 		    	this.doPost(req,resp);
