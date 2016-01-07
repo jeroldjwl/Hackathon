@@ -25,19 +25,20 @@ public class UserLoginServlet extends HttpServlet {
 		String password = req.getParameter("password");
 
 		UserService service = new UserService();
-
-		User user = service.getUser(username, conn);
-		if (!password.equals(user.getPassword())) {
+		
+		try {
+			User user = service.getUser(username, conn);
+			req.getSession().setAttribute("user", user);
+			req.getRequestDispatcher("/WEB-INF/pages/userHome.jsp").forward(req, resp);
+		} catch (Exception e) {
+			// TODO: handle exception
 			String message = String.format(
 					"对不起，用户名或密码有误！！请重新登录！2秒后为您自动跳到登录页面！！<meta http-equiv='refresh' content='2;url=%s'",
-					req.getContextPath() + "/servlet/LoginUIServlet");
+					req.getContextPath() + "/servlet/UserLoginUIServlet");
 			req.setAttribute("message", message);
 			req.getRequestDispatcher("/message.jsp").forward(req, resp);
 			return;
 		}
-
-		req.getSession().setAttribute("user", user);
-		req.getRequestDispatcher("/WEB-INF/pages/userHome.jsp").forward(req, resp);
 
 	}
 

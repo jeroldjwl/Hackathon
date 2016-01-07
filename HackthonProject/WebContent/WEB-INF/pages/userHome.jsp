@@ -8,5 +8,7 @@
 </head>
 <body>
 This is userHome Page
+The userName is ${user.userName}
+
 </body>
 </html>

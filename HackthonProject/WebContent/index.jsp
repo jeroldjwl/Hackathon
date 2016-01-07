@@ -11,7 +11,7 @@
 <div class="toplogin">
 <div class ="loginright">
 	<div class="loginbutton" >
-		<form id="formlogin" action="/HackthonProject/servlet/LoginServlet" method="post" class="toplogin">
+		<form id="formlogin" action="/HackthonProject/servlet/UserLoginServlet" method="post" class="toplogin">
 		  <label for="user" class="entypo-user"></label>
 		  <input id="user" type="text" class="toplogin" name="username" placeholder="username" style="margin-top: 10px;">
 		  <button class="submit">Login</button>
