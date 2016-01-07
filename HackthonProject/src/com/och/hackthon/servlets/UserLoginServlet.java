@@ -65,5 +65,4 @@ public class UserLoginServlet extends HttpServlet {
 		super.service(req, resp);
 	}
 	
-	
 }
