@@ -49,7 +49,7 @@
 						class="entypo-lock"></label> <input id="id" type="password"
 						class="pass" name="password" placeholder="password">
 					<button id="userloginbutton" class="submit">Login</button>
-					<a id="userregister" href="/register.jsp"
+					<a id="userregister" href="./register.jsp"
 						style="margin-right: 10px;">Register</a>
 				</form>
 			</div>

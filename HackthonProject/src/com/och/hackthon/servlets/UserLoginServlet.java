@@ -26,12 +26,9 @@ public class UserLoginServlet extends HttpServlet {
 
 		UserService service = new UserService();
 		
-		try {
-			User user = service.getUser(username, conn);
-			req.getSession().setAttribute("user", user);
-			req.getRequestDispatcher("/WEB-INF/pages/userHome.jsp").forward(req, resp);
-		} catch (Exception e) {
-			// TODO: handle exception
+		User user = service.getUser(username, conn);
+		
+		if(user.equals(null)){
 			String message = String.format(
 					"对不起，用户名或密码有误！！请重新登录！2秒后为您自动跳到登录页面！！<meta http-equiv='refresh' content='2;url=%s'",
 					req.getContextPath() + "/servlet/UserLoginUIServlet");
@@ -39,6 +36,9 @@ public class UserLoginServlet extends HttpServlet {
 			req.getRequestDispatcher("/message.jsp").forward(req, resp);
 			return;
 		}
+		
+		req.getSession().setAttribute("user", user);
+		req.getRequestDispatcher("/WEB-INF/pages/userHome.jsp").forward(req, resp);
 
 	}
 
