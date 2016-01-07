@@ -59,7 +59,7 @@
 		<table class="searchRes_table " id="searchanchor_9781784399092"
 			cellspacing="0" cellpadding="0" style="margin-top: 10px;">
 			<tbody>
-				<%
+				<%-- <%
 					ResultSet rs = null;
 					UserService us = new UserService();
 					BookService bs = new BookService();
@@ -68,7 +68,7 @@
 					 while (rs.next()) {
 						out.println(
 								rs.getString("BookNo") + ", " + rs.getString("BookName") + ", " + rs.getString("Description")+","+rs.getString("imgPath")+rs.getString("Publisher")+rs.getString("Author"));
-				%>
+				%> --%>
 				<tr valign="top">
 					<td class="searchRes_number" width="6%">
 						<div style="width: 100%;"></div> <input class="booklistcheckbox"
@@ -85,18 +85,19 @@
 											<img class="bookCover"
 												alt="RESTful Java Web Services - Second Edition"
 												title="RESTful Java Web Services - Second Edition"
-												width="76" src=<%= rs.getString("imgPath") %>>
+												width="76" src="./images/9781784399092_xs.jpg">
 										</div>
 										<div class="bookData">
-											<p class="p bookTitle"><%= rs.getString("BookName")%></p>
+											<p class="p bookTitle">RESTful Java</p>
 											<p class="p bookText bookAuthors">
-												<strong class="strong">By:&nbsp;</strong>
-												<%= rs.getString("Author")%>
+												<strong class="strong">By:&nbsp;</strong>Jobinesh
+												Purushothaman
 											</p>
 											<p class="p bookText bookPublisher">
-												<strong class="strong">Publisher:&nbsp;</strong>
-												<%= rs.getString("Publisher") %>
+												<strong class="strong">Publisher:&nbsp;</strong>Packt
+												Publishing
 											</p>
+											<p class="p bookText bookPublicationDate"></p>
 										</div>
 									</div>
 								</div>
@@ -108,13 +109,18 @@
 							<p class="p section_info">Chapter Title: Asynchronous RESTful
 								web services</p>
 							<div class="snippet">
-								<%=rs.getString("Description")%>
+								Asynchronous RESTful <span class="SearchHighlight">web
+									services</span> Asynchronous RESTful <span class="SearchHighlight">web
+									services</span> All the discussions on the RESTful <span
+									class="SearchHighlight">web services</span> that we have had so
+								far were based on the synchronous request and response model.
+								When a client invokes a RESTful web API synchronously, the
 							</div>
 						</div>
 					</td>
 				</tr>
-				<%}
-		%>	 
+				<%-- <%}
+		%>	  --%>
 			</tbody>
 		</table>
 		<div class="bottom"></div>
