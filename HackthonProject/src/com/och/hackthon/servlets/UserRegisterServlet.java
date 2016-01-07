@@ -41,9 +41,7 @@ public class UserRegisterServlet extends HttpServlet {
 			
 			boolean isOk = true;
 			
-			DBConnUtil dbConnUtil = new DBConnUtil();
-			
-			Connection conn = dbConnUtil.getConnection();
+			Connection conn = DBConnUtil.getConnection();
 			
 			String username = req.getParameter("username");
 			

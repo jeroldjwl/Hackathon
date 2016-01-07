@@ -25,6 +25,15 @@
 		<servlet-name>AdminLoginUIServlet</servlet-name>
 		<servlet-class>com.och.hackthon.servlets.AdminLoginUIServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>UserOperationServlet</servlet-name>
+		<servlet-class>com.och.hackthon.servlets.UserOperationServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AdminOperationServlet</servlet-name>
+		<servlet-class>com.och.hackthon.servlets.AdminOperationServlet</servlet-class>
+	</servlet>
+	
 	
 	<servlet>
 		<servlet-name>LoginUIServlet</servlet-name>
@@ -66,6 +75,14 @@
 	<servlet-mapping>
 		<servlet-name>AdminLoginUIServlet</servlet-name>
 		<url-pattern>/servlet/AdminLoginUIServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserOperationServlet</servlet-name>
+		<url-pattern>/servlet/UserOperationServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AdminOperationServlet</servlet-name>
+		<url-pattern>/servlet/AdminOperationServlet</url-pattern>
 	</servlet-mapping>
 	
 	
