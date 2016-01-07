@@ -32,15 +32,15 @@ public class User {
 	public void setNickName(String nickName) {
 		this.nickName = nickName;
 	}
-	
+
 	public String getRealName() {
-		return nickName;
+		return realName;
 	}
 
 	public void setRealName(String realName) {
 		this.realName = realName;
 	}
-	
+
 	public String getPassword() {
 		return password;
 	}
@@ -56,12 +56,12 @@ public class User {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	
+
 	public String getGender() {
 		return gender;
 	}
 
-	public void setGender(String address) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 
@@ -72,12 +72,14 @@ public class User {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	
+
 	public int getUserRole() {
-		return age;
+		return userRole;
 	}
 
 	public void setUserRole(int userRole) {
 		this.userRole = userRole;
 	}
+
+	
 }
