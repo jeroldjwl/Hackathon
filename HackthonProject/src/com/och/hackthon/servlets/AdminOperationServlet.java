@@ -24,13 +24,7 @@ public class AdminOperationServlet {
 		    req.setCharacterEncoding("GBK");				
 		    HttpSession session = req.getSession();			
 		    String action = req.getParameter("action");								
-		    String stuNO = (String)session.getAttribute("stuNO");
-		    if(action.equals("login")){		
-				stuNO = req.getParameter("uname").trim();	
-				String pwd = req.getParameter("pwd").trim();		
-				req.getRequestDispatcher("login.jsp").forward(req,res);					
-		    }
-		    else if(action.equals("logout")){
+		    if(action.equals("logout")){
 		    	req.getSession(true).invalidate();	
 				req.getRequestDispatcher("login.jsp").forward(req,res);
 		    }

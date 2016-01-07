@@ -22,18 +22,8 @@ public class UserOperationServlet {
 		    resp.setCharacterEncoding("GBK");											
 		    req.setCharacterEncoding("GBK");				
 		    HttpSession session = req.getSession();			
-		    String action = req.getParameter("action");		
-		    String message = "";						
-		    String sql = "";									
-		    final int delay = 30;					
-		    final int distance = 5;							
-		    String stuNO = (String)session.getAttribute("stuNO");
-		    if(action.equals("login")){		
-				stuNO = req.getParameter("uname").trim();	
-				String pwd = req.getParameter("pwd").trim();		
-				req.getRequestDispatcher("login.jsp").forward(req,resp);					
-		    }
-		    else if(action.equals("logout")){
+		    String action = req.getParameter("action");								
+		    if(action.equals("logout")){
 		    	req.getSession(true).invalidate();	
 				req.getRequestDispatcher("login.jsp").forward(req,resp);
 		    }
