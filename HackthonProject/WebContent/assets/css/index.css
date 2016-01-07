@@ -1,0 +1,116 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu|Courgette);
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+@green: #2ecc71;
+@green-dark: #27ae60;
+@facebook: #3b5998;
+@twitter: #56b4ef;
+@googleplus: #dd4b39;
+
+div {
+    display: block;
+}
+.searchRes_table .result_itemBlock .bookData {
+    float: left;
+    padding: 0 6px 0 6px;
+}
+
+div.toplogin {
+	width: 100%;
+    height: 30px;
+    background: #053b6b;
+    white-space: nowrap;      
+}
+div.loginbutton{
+	float: right;
+}
+.submit{
+     width:80px
+}
+#formlogin{
+	margin-top: 2px;	
+}
+#userregister{
+	color: #f9b534;
+}
+#userloginbutton{
+    background: #FDBF57
+}
+.upper {
+    padding: 10px 0;
+    height:68px
+}
+.wrap{
+    width: 970px;
+    margin: 0 auto;
+}
+.right {
+    float: right;
+}
+.searchModule {
+    display: inline-block;
+    margin: 10px 0 0 0;
+    border-radius: 5px;
+    background: #053F75;
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#135084),color-stop(100%,#053f75));
+    background: -webkit-linear-gradient(top,#135084 0,#053f75 100%);   
+    box-shadow: 0 1px 0 #386a96,0 -1px 0 #0b3c64;
+}
+.bookCover {
+    float: left;
+}
+
+.bookData {
+    float: left;
+    padding: 0 6px 0 6px;
+}
+
+.bookTitle {
+    overflow: hidden;
+    width: 185px;
+    padding: 0 0 4px 0;
+    margin: 0;
+    font-size: 12px;
+}
+.bookText {
+    width: 190px;
+    font-size: 10px;
+    padding: 0 0 2px 0;
+    margin: 0;
+}
+.result_itemBlock {
+    width: 300px;
+    margin-right: 15px;
+}
+.bluBrdrBox1 {
+    margin: 0 0 12px 0;
+    border: 1px solid #BFC9D5;
+    background: #E7EEF3;
+    height:100px
+}
+
+.searchRes_content {
+    width: auto;
+}
+p.section_info {
+    font-size: 14px;
+    padding: 0 0 6px 0;
+}
+.snippet {
+    overflow: auto!important;
+}
+tr[Attributes Style] {
+    vertical-align: top;
+}
+user agent stylesheettr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+    border-top-color: inherit;
+    border-right-color: inherit;
+    border-bottom-color: inherit;
+    border-left-color: inherit;
+}
+.blubrBoxContent {
+    padding: 5px 8px;
+}
