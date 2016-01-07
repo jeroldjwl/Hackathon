@@ -8,15 +8,23 @@
 <title>home </title>
 </head>
 <body>
-<div class="toplogin">		
-<form action="${pageContext.request.contextPath }/servlet/UserLoginServlet" method="get" class="toplogin">
-	  <span class="toplogin"></span>
-	  <input type="text" class="toplogin"" name="username"/>
-	  <span class="entypo-key inputPassIcon"></span>
-	  <input type="password" class="pass"name="password"/>
-	  <button class="submit">Login<span class="entypo-lock"></span></button>
-	  <button class="submit">Register<span class="entypo-lock"></span></button>
+<div class="toplogin">
+<div class ="loginright">
+	<div class="loginbutton" >
+		<form id="formlogin" action="/HackthonProject/servlet/LoginServlet" method="post" class="toplogin">
+		  <label for="user" class="entypo-user"></label>
+		  <input id="user" type="text" class="toplogin" name="username" placeholder="username" style="margin-top: 10px;">
+		  <button class="submit">Login</button>
+	    </form>
+    </div>
+    <div class="registerbutton">
+    <form action="/HackthonProject/servlet/UserRegisterServlet" method="post" class="toplogin" >    
+	  <label for="pwd" class="entypo-lock"></label>
+	  <input id ="id" type="password" class="pass" name="password" placeholder="password">	  
+      <button class="submit">Register</span></button>
     </form>
+    </div>
+    </div>
 </div>
 <div class="search">
 	<div class="form">
@@ -24,14 +32,10 @@
 			<button onclick="search('key');return false;" class="button cw-icon" clstag="shangpin|keycount|toplist1|b03"><i></i>Search</button>
 		</div>
 </div>
-
-
-
-
+<!-- 
 <div class ="results_container">
 <div class = "tabletoolbar">Table Tool Bar</div>
 <div class = "pag_chunk">pag_chunk</div>
- <!--  
 <table class="searchRes_table " id="searchanchor_9781784399092" cellspacing="0" cellpadding="0">
   <tbody>
   <tr valign="top">
