@@ -19,10 +19,12 @@ public class UserOperationServlet extends HttpServlet {
 	}   	    
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 	throws ServletException,IOException{
+			
 		    resp.setCharacterEncoding("GBK");											
 		    req.setCharacterEncoding("GBK");				
 		    HttpSession session = req.getSession();			
-		    String action = req.getParameter("action");								
+		    String action = req.getParameter("action");
+		    
 		    if(action.equals("logout")){
 		    	req.getSession(true).invalidate();	
 				req.getRequestDispatcher("/index.jsp").forward(req,resp);
@@ -95,7 +97,10 @@ public class UserOperationServlet extends HttpServlet {
 		    		Connection conn = DBConnUtil.getConnection();
 			    	String bookNO = req.getParameter("bookNO");
 					String bookName = req.getParameter("bookName");
+					int num = Integer.parseInt(req.getParameter("num"));
 					BookService service = new BookService();
+					int remainStock = service.borrowBook(bookNO, bookName, num, conn);
+					req.getRequestDispatcher("/userHome.jsp").forward(req,resp);
 				}
 		    }
 		    else if(action.equals("returnBooks")){
