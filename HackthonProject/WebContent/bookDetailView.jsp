@@ -91,9 +91,14 @@
 							<strong class="strong">Inventory: </strong><span >5</span>
 						</p></li>
 				</ul>
-				<form action="/HackthonProject/servlet/UserOperationServlet">
+				<script>
+				var borrowS = function(){
+				      alert("Success!");
+				}
+				</script>
+				<form action=>
 				<input type = "hidden" name="action" value="borrowBooks">			
-					<button type="submit" class="booklistsubmit" style="margin-top: 50px;">SUBMIT</button>
+					<button type="submit" class="booklistsubmit" style="margin-top: 50px;" onclick="borrowS()">SUBMIT</button>
 				</form>
 			</div>
 		</div>
