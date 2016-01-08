@@ -93,7 +93,6 @@ public class UserOperationServlet extends HttpServlet {
 		    	req.getRequestDispatcher("/userHome.jsp").forward(req,resp);
 		    }
 		    else if(action.equals("borrowBooks")){
-		    	synchronized (this) {
 		    		Connection conn = DBConnUtil.getConnection();
 			    	String bookNO = req.getParameter("bookNO");
 					String bookName = req.getParameter("bookName");
@@ -101,15 +100,12 @@ public class UserOperationServlet extends HttpServlet {
 					BookService service = new BookService();
 					int remainStock = service.borrowBook(bookNO, bookName, num, conn);
 					req.getRequestDispatcher("/userHome.jsp").forward(req,resp);
-				}
 		    }
 		    else if(action.equals("returnBooks")){
-		    	synchronized (this) {
 		    		Connection conn = DBConnUtil.getConnection();
 			    	String bookNO = req.getParameter("bookNO");
 					String bookName = req.getParameter("bookName");
 					BookService service = new BookService();
-				}
 		    }
 		    else if(action.equals("pay")){
 		    	String bookNO = req.getParameter("bookNO");
