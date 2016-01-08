@@ -27,7 +27,7 @@ public class AdminOperationServlet extends HttpServlet {
 		    String action = req.getParameter("action");								
 		    if(action.equals("logout")){
 		    	req.getSession(true).invalidate();	
-				req.getRequestDispatcher("/login.jsp").forward(req,resp);
+				req.getRequestDispatcher("/index.jsp").forward(req,resp);
 		    }
 		    else if(action.equals("addUser")){
 		    	String username = req.getParameter("username");
