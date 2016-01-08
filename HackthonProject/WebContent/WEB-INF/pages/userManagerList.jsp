@@ -9,6 +9,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="assets/css/index.css" />
+<link rel="stylesheet" href="assets/css/listformat.css" />
 <title>Insert title here</title>
 </head>
 <body>
@@ -16,11 +17,11 @@
 		cellspacing="0" cellpadding="0" style="margin-top: 10px;">
 		<tbody>
 			<tr>
-				<td><p>UserName:</p></td>
-				<td><p>NickName:</p></td>
-				<td><p>RealName:</p></td>
-				<td><p>Address:</p></td>
-				<td><p>Email:</p></td>
+				<td align="center" bgcolor="#D1D1E6">UserName:</td>
+				<td align="center" bgcolor="#D1D1E6">NickName:</td>
+				<td align="center" bgcolor="#D1D1E6">RealName:</td>
+				<td align="center" bgcolor="#D1D1E6">Address:</td>
+				<td align="center" bgcolor="#D1D1E6">Email:</td>
 			</tr>
 			<%
 				response.setContentType("UTF-8");
