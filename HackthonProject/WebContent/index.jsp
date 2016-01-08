@@ -169,8 +169,8 @@
 															width="76" src=<%= rs.getString("imgPath")%>>
 													</div>
 													<div class="bookData">
-														<p class="p bookTitle" style="margin-top: 8px;">RESTful
-															Java</p>
+														<p class="p bookTitle" style="margin-top: 8px;">
+														<%= rs.getString("BookName")%></p>
 														<P></P>
 														<p class="p bookText bookAuthors">
 															<strong class="strong">By:&nbsp;</strong>
@@ -180,9 +180,9 @@
 															<strong class="strong">Publisher:&nbsp;</strong>
 															<%= rs.getString("Publisher") %>
 														</p>
-														<form action="">
+														<!-- <form action="">
 															<button type="submit" class="booklistsubmit">SUBMIT</button>
-														</form>
+														</form> -->
 													</div>
 												</div>
 											</div>
@@ -192,7 +192,7 @@
 								<td class="searchRes_content" width="30%">
 									<div style="width: 100%;">
 										<p class="p section_info">
-											<b>Chapter Title: Asynchronous RESTful web services</b>
+											<b>Brief Introduction</b>
 										</p>
 										<div class="snippet" style="max-height: 70px;">
 											<%=rs.getString("Description")%>
