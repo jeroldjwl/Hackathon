@@ -34,8 +34,16 @@ public class UserLoginServlet extends HttpServlet {
 			return;
 		}
 		
-		req.getSession().setAttribute("user", user);
-		req.getRequestDispatcher("/WEB-INF/pages/userHome.jsp").forward(req, resp);
+		if(user.getUserRole() == 0)
+		{
+			req.getSession().setAttribute("user", user);
+			req.getRequestDispatcher("/admin.jsp").forward(req, resp);
+		}
+		else {
+			req.getSession().setAttribute("user", user);
+			req.getRequestDispatcher("/WEB-INF/pages/userHome.jsp").forward(req, resp);
+		}
+		
 
 	}
 
