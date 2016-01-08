@@ -163,10 +163,12 @@
 												<div class="blubr1cl"></div>
 												<div class="blubrBoxContent">
 													<div class="bookpicture">
+													<a href="bookDetailView.jsp">
 														<img class="bookCover"
 															alt="RESTful Java Web Services - Second Edition"
 															title="RESTful Java Web Services - Second Edition"
 															width="76" src=<%= rs.getString("imgPath")%>>
+															</a>
 													</div>
 													<div class="bookData">
 														<p class="p bookTitle" style="margin-top: 8px;">
