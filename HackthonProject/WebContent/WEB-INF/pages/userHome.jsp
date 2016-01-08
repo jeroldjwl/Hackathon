@@ -141,7 +141,7 @@
 												type="text" style="visibility: hidden; display: none;">
 											<input class="btn" id="submitnewword"
 												alt="Search Within Results" value="Search Within Results"
-												src="./images/btn_search_searchwithin.gif" type="image"
+												src="../images/btn_search_searchwithin.gif" type="image"
 												name="__submitnewword" title="Search Within Results">
 										</p>
 									</form>
@@ -213,7 +213,7 @@
 														<img class="bookCover"
 															alt="RESTful Java Web Services - Second Edition"
 															title="RESTful Java Web Services - Second Edition"
-															width="76" src=<%= rs.getString("imgPath")%>>
+															width="76" src=<%= "."+rs.getString("imgPath")%>>
 													</div>
 													<div class="bookData">
 														<p class="p bookTitle" style="margin-top: 8px;">
