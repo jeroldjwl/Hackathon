@@ -9,14 +9,14 @@
 		<form action="${pageContext.request.contextPath}/servlet/UserRegisterServlet" method="post">
 			<table width="60%" border="1">
 				<tr>
-					<td>username</td>
+					<td>username(telephone number)</td>
 					<td>
 						<%--01使用EL表达式${}提取存储在request对象中的formbean对象中封装的表单数据(formbean.userName)以及错误提示消息(formbean.errors.userName)--%>
 						<input type="text" name="userName">
 					</td>
 				</tr>
 				<tr>
-					<td>password</td>
+					<td>password(3-8 digit number)</td>
 					<td>
 						<input type="password" name="password">
 					</td>
