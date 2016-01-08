@@ -87,6 +87,9 @@
 					<li><p class="p data">
 							<strong class="strong">Pages in Print Edition: </strong><span>354</span>
 						</p></li>
+						<li style="color: blue;"><p class="p data" >
+							<strong class="strong">Inventory: </strong><span >5</span>
+						</p></li>
 				</ul>
 				<form action="/HackthonProject/servlet/UserOperationServlet">
 				<input type = "hidden" name="action" value="borrowBooks">			
