@@ -27,7 +27,7 @@ public class AdminOperationServlet extends HttpServlet {
 		    String action = req.getParameter("action");								
 		    if(action.equals("logout")){
 		    	req.getSession(true).invalidate();	
-				req.getRequestDispatcher("login.jsp").forward(req,resp);
+				req.getRequestDispatcher("/login.jsp").forward(req,resp);
 		    }
 		    else if(action.equals("addUser")){
 		    	String username = req.getParameter("username");
@@ -44,7 +44,7 @@ public class AdminOperationServlet extends HttpServlet {
 				
 				boolean flag = service.insertUser(user, conn);
 				
-				req.getRequestDispatcher("adminNavigation.jsp").forward(req,resp);
+				req.getRequestDispatcher("/admin.jsp").forward(req,resp);
 				
 		    }
 		    else if(action.equals("deleteUser")){
@@ -63,7 +63,7 @@ public class AdminOperationServlet extends HttpServlet {
 				
 				boolean flag = service.delete(username, conn);
 				
-				req.getRequestDispatcher("adminNavigation.jsp").forward(req,resp);
+				req.getRequestDispatcher("/admin.jsp").forward(req,resp);
 				
 		    }
 		    else if(action.equals("addBook")){
@@ -82,7 +82,7 @@ public class AdminOperationServlet extends HttpServlet {
 				
 				boolean flag = service.insertBook(book, toNum, conn);
 				
-				req.getRequestDispatcher("adminNavigation.jsp").forward(req,resp);
+				req.getRequestDispatcher("/admin.jsp").forward(req,resp);
 		    }
 		    else if(action.equals("deleteBook")){
 		    	String bookNO = req.getParameter("bookNO");
@@ -100,7 +100,7 @@ public class AdminOperationServlet extends HttpServlet {
 				
 				boolean flag = service.deleteBook(bookNO, bookName, stock, conn);
 				
-				req.getRequestDispatcher("adminNavigation.jsp").forward(req,resp);
+				req.getRequestDispatcher("/admin.jsp").forward(req,resp);
 		    }
 		    else if(action.equals("SingleBookInfo")){
 		    	String bookNO = req.getParameter("bookNO");
