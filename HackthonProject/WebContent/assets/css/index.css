@@ -34,7 +34,8 @@ div.loginbutton{
 	color: #f9b534;
 }
 #userloginbutton{
-    background: #FDBF57
+    background: #FDBF57;
+    magin:right
 }
 .booklistsubmit{
 	background-color: #00467F;
@@ -207,4 +208,29 @@ user agent stylesheettr {
     padding: 0;
     font-size: 11px;
     line-height: 1.2em;
+}
+
+.left1{
+	float: left;
+    width: 200 px;
+    height:50%;
+    white-space: nowrap;
+    color: white;
+}
+.right1{
+	float:right;
+    width: 50%;
+    height: 50%;
+    white-space: nowrap;
+    color: white;
+}
+#divnav2{
+	float:left;
+}
+
+#userManage #bookManage{
+	float:left;
+	text-align: center;
+	width:150px;
+	
 }

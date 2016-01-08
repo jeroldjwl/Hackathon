@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+<link rel="stylesheet" href="assets/css/index.css" />
 <title>Admin Page</title>
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -24,11 +25,11 @@
 					$("#mainContent").html(dates);//要刷新的div  
 				},
 				error : function() {
-					alert("失败，请稍后再试！");
+					alert("failure,wait a moment!");
 				}
 			});
 		});
-		
+
 		$("#bookManage").click(function() {
 			//var url = "index.jsp";
 			var url = "servlet/SampleServlet2";
@@ -45,7 +46,7 @@
 					$("#mainContent").html(dates);//要刷新的div  
 				},
 				error : function() {
-					alert("失败，请稍后再试！");
+					alert("failure,wait a moment!");
 				}
 			});
 		});
@@ -53,21 +54,35 @@
 </script>
 </head>
 <body>
-	<div>
-		<div class="left">
+	<div class="toplogin">
+		<div class="loginright">
+			<div class="loginbutton">
+				<form id="formlogin"
+					action="/HackthonProject/servlet/UserLoginServlet" method="post"
+					class="toplogin">
+					<a id="userregister" href="index.jsp"
+						style="margin-right: 10px;">logout</a>
+					<p>Welcome to our library !</p>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div id="divnav2">
+		<div class="left1">
 			<table>
-				<tr>
+				<tr style="margin-top: 10px">
 					<td><input type="button" id="userManage" class="userManage"
-						value="用户管理" /></td>
+						value="User Manage" style="width:150px"/></td>
 				</tr>
-				<tr>
-					<td><input type="button" id="bookManage" class="bookManage"
-					  value="图书管理" /></td>
+				<tr >
+					<td style="margin-top: 50px"><input type="button" id="bookManage" class="bookManage"
+						value="Book Manage" style="width: 150px" /></td>
 				</tr>
 			</table>
 		</div>
-		<div class="right">
+		<div class="right1">
 			<div id="mainContent"></div>
+			<p>welcome</p>
 		</div>
 	</div>
 </body>
